@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Ryz i keczup v2</string>
+
+    <string name="navigationBar1">Value1</string>
+    <string name="navigationBar2">Value2</string>
+    <string name="navigationBar3">Value3</string>
 </resources>
