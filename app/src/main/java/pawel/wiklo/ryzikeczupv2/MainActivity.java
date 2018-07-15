@@ -66,3 +66,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
+/*
+For the people who's asking about if you have an EDITTEXT in the fragment , the bottom nav displays above the keyboard you should ass this line
+
+android:windowSoftInputMode="adjustPan"
+ */
