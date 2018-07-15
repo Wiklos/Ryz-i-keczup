@@ -1,14 +1,19 @@
 package pawel.wiklo.ryzikeczupv2;
 
-import android.app.Fragment;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import pawel.wiklo.ryzikeczupv2.main;
+import pawel.wiklo.ryzikeczupv2.active;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         toolbar.setTitle("Initial title");
+        loadFragment(new main());
     }
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -38,15 +44,25 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_bottom2:
                     toolbar.setTitle("2");
+                    fragment = new main();
+                    loadFragment(fragment);
                     return true;
                 case R.id.navigation_bottom3:
                     toolbar.setTitle("3");
+                    fragment = new active();
+                    loadFragment(fragment);
                     return true;
             }
             return false;
         }
     };
-
+    private void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //inflate menu
