@@ -1,5 +1,6 @@
 package pawel.wiklo.ryzikeczupv2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -77,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
 
         if(id==R.id.add)
         {
-            Toast.makeText(this,"Button",Toast.LENGTH_LONG).show();
+            //Toast.makeText(this,"Button",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, AddNew.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
