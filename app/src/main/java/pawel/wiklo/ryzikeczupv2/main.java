@@ -44,12 +44,12 @@ public class main extends Fragment {
 
         View returnView = inflater.inflate(R.layout.fragment_main, container, false);
         TextView tv = (TextView) returnView.findViewById(R.id.textView);
-        tv.setText("hello");
+        //tv.setText("hello");
 
         tv.setText("AAAAAAAAAAAAAAAAAAA");
         while(k.moveToNext())
         {
-            tv.setText(tv.getText()+ "\n"+ k.getString(1) + k.getString(2) );
+            tv.setText(tv.getText()+ "\n"+ k.getString(1) +" "+ k.getString(2) );
             //tv.setText(k.getString(2) );
             Log.e("TAG","Inside while k.moveToNext main");
         }
